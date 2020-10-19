@@ -28,12 +28,48 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
+    <div style="padding: 15px;"></div>
     <div class="container">
       <!-- Timeblocks go here -->
       <div class = "row">
-        <div class = "col">time</div>
-        <div class = "col-10">Event entry</div>
-        <div class = "col">Save image</div>
+        <div class = "col hour" id = "hour">9AM</div>
+        <div class = "col-10 time-block">
+          <textarea id="event" type = "text" event-number = 1></textarea>
+        </div>
+        <div class = "col saveBtn" id ="saveBtn-1" button-number =1>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col hour" id = "hour">10AM</div>
+        <div class = "col-10 time-block">
+          <textarea id="event" type = "text" event-number = 2></textarea>
+        </div>
+        <div class = "col saveBtn" id ="saveBtn-2" button-number =2>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col hour" id = "hour">11AM</div>
+        <div class = "col-10 time-block">
+          <textarea id="event" type = "text" event-number = 3></textarea>
+        </div>
+        <div class = "col saveBtn" id ="saveBtn-3" button-number =3>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col hour" id = "hour">12PM</div>
+        <div id = "time-block" class = "col-10 time-block">
+          <textarea id="event-4" type = "text" event-number =4></textarea>
+        </div>
+        <div class = "col saveBtn"  id ="saveBtn-4" button-number =4>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col hour" id = "hour">1PM</div>
+        <div class = "col-10 time-block">
+          <textarea id="event" type = "text" event-number =5></textarea>
+        </div>
+        <div class = "col saveBtn" id ="saveBtn-5" button-number =5><a href="#"></a>
+        </div>
       </div>
     </div>
 

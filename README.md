@@ -19,6 +19,8 @@ That event is then saved, even if the user refreshes the browser or closes the b
     <li>HTML/CSS</li>
     <li>JavaScript</li>
     <li>JQuery</li>
+    <li>Moment</li>
+    <li>Bootstrap</li>
 </ul>
 
 ## Screenshot
