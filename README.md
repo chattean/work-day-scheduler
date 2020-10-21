@@ -24,3 +24,5 @@ That event is then saved, even if the user refreshes the browser or closes the b
 </ul>
 
 ## Screenshot
+
+<img src = "./assets/images/screenshot.png" />
