@@ -12,6 +12,7 @@ currentDayEl.innerHTML = todaysDate;
 // If there is nothing in 'localStorage', sets the 'list' to an empty array
 var eventListArray = JSON.parse(localStorage.getItem('eventlist')) || [];
 
+renderEvents(eventListArray);
 
 function renderEvents(eventListArray){
 
@@ -23,34 +24,34 @@ function renderEvents(eventListArray){
 
 // Whenever Save button is clicked this function will set to localstorage an event number for the time slot
 // and save the input that the user has
-$(".saveBtn").on('click', function(event){
-    event.preventDefault();
+$(".saveBtn").each(function(){
+    $(this).on('click', function(event){
+        event.preventDefault();
 
-    var eventNumber = $(this).attr('button-number');
+        var eventNumber = $(this).attr('button-number');
 
-    id = "event-number =" + eventNumber;
+        var eventinput = $("[event-number='"+ eventNumber +"']")
+            .val()
+            .trim();
 
-    var eventinput = $("#event")
-        .val()
-        .trim();
+        eventListObj = {"eventNumber":eventNumber, "event" : eventinput}
 
-    eventListObj = {"eventNumber":eventNumber, "event" : eventinput}
+        eventListArray.push(eventListObj);
+        renderEvents(eventListArray);
 
-    eventListArray.push(eventListObj);
-
-    renderEvents(eventListArray);
-
-    localStorage.setItem('eventlist', JSON.stringify(eventListArray));
-
-});
+        localStorage.setItem('eventlist', JSON.stringify(eventListArray));
+})});
 
 // Changing the time-block div to be a different color for past, present and future
 function changeTimeBlockBackgroud(){
     $('.time-block').each(function(){
-        var hourOnPage = $(this).attr("id");
-        var currentHour = moment.format("HH");
+        var hourOnPage = $(this).attr("id"); // this is the id we specified in the HTML
+        var currentHour = moment.format("HH"); // use moment to get current hour
+        //convert to int for comparing
         hourOnPage = parseInt(hourOnPage);
         currentHour = parseInt(currentHour);
+
+        //logic for change of background color
 
         if (currentHour < hourOnPage)
             $(this).addClass("future");
